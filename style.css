@@ -1,36 +1,128 @@
-body {
-  font-family: sans-serif;
+
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  font-family: "Audiowide", sans-serif;
 }
 
-header {
-  background-color: #333;
-  color: #fff;
+body {
+  height: 100vh;
+  display: flex;
+  padding: 15px;
+  align-items: center;
+  justify-content: center;
+  background: #f6f7fb;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  max-width: 535px;
+  width: 100%;
+  padding: 2rem 5rem;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.result_imagens {
+  display: flex;
+  gap: 7rem;
+  justify-content: center;
+}
+
+.container.start .player_result {
+  transform-origin: left;
+  animation: userShake 0.7s ease infinite;
+}
+
+
+.container.start .bot_result {
+  transform-origin: right;
+  animation: botShake 0.7s ease infinite;
+}
+
+
+.result_imagens img {
+  width: 100px;
+}
+
+.player_result img {
+  transform: rotate(90deg);
+}
+
+.bot_result img {
+  transform: rotate(-90deg) rotateY(180deg);
+}
+
+.resultado {
   text-align: center;
-  padding: 1rem;
+  font-size: 2rem;
+  color: #1e6d25;
+  margin: 1.5rem 0;
 }
 
-main {
-  padding: 2rem;
-  text-align: center;
+.opcao img {
+  width: 50px;
 }
 
-button {
-  padding: 0.5rem 1rem;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
+.opcoes {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  margin-top: 2.5rem;
+  justify-content: space-evenly;
+}
+
+.container.start .opcoes {
+  pointer-events: none;
+}
+
+.opcao {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0.5;
   cursor: pointer;
+  transition: opacity 0.3s ease;
 }
 
-footer {
-  background-color: #f0f0f0;
-  text-align: center;
-  padding: 1rem;
+.opcao:hover {
+  opacity: 1;
 }
-#minhaImagem{
-  position: relative;
-  left: 31%;
-  margin-top: 30px;
+
+.opcao.active {
+  opacity: 1;
+}
+
+.opcao img {
+  pointer-events: none;
+}
+
+.opcao p {
+  color: #1e6d25;
+  font-size: 1.235rem;
+  margin-top: 1rem;
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 2rem;
+  }
+
+  .result_imagens img {
+    width: 80px;
+  }
+}
+
+@media (max-width: 500px) {
+  .opcoes {
+    justify-content: space-between;
+  }
+
+  .opcao img {
+    width: 40px;
+  }
 }
