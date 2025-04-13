@@ -4,7 +4,7 @@ const botResult = document.querySelector(".bot_result img");
 const resultado = document.querySelector(".resultado");
 const opcoes = document.querySelectorAll(".opcao");
 
-const botImagens = ["images/pedra.png", "images/papel.png", "images/tesoura.png"];
+const botImagens = ["IMG/pedra.png", "IMG/papel.png", "IMG/tesoura.png"];
 const outcomes = {
   RR: "Empate",
   RP: "BOT Ganhou",
@@ -21,7 +21,7 @@ function handleOptionClick(event) {
   const Imagemclicada = event.currentTarget;
   const clique = Array.from(opcoes).indexOf(Imagemclicada);
 
-  playerResult.src = botResult.src = "images/pedra.png";
+  playerResult.src = botResult.src = "IMG/pedra.png";
   resultado.textContent = "Espere...";
 
   opcoes.forEach((image, index) => {
